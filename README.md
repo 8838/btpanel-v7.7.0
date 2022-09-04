@@ -35,7 +35,7 @@ rm -f /www/server/panel/data/bind.pl
 chattr +i /www/server/panel/data/plugin.json
 ```
 
-#### 6，上锁后现在可以关闭离线模式了
+#### 6，上锁后现在可以关闭离线模式了，完成！
 
 ===========================================================
 
