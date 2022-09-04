@@ -21,23 +21,19 @@ sed -i "s|bind_user == 'True'|bind_user == 'XXXX'|" /www/server/panel/BTPanel/st
 rm -f /www/server/panel/data/bind.pl
 ```
 
-3，面板设置里暂时开启离线模式
+3，手动解锁宝塔所有付费插件为永不过期
 
-4，手动解锁宝塔所有付费插件为永不过期
-
-文件路径：`www/server/panel/data/plugin.json`
+文件路径：`/www/server/panel/data/plugin.json`
 
 搜索字符串：`"endtime": -1`全部替换为`"endtime": 999999999999`
 
-5，给plugin.json文件上锁防止自动修复为免费版
+4，给plugin.json文件上锁防止自动修复为免费版
 
 ```
 chattr +i /www/server/panel/data/plugin.json
 ```
 
-6，上锁后现在可以关闭离线模式了，完成！
-
-============================================================================
+=================================================================
 
 ！！如需取消屏蔽手机号
 ```
