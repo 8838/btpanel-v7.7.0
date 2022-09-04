@@ -25,7 +25,8 @@ rm -f /www/server/panel/data/bind.pl
 
 #### 4，手动解锁宝塔所有付费插件为永不过期
 
-文件路径：www/server/panel/data/plugin.json
+文件路径：`www/server/panel/data/plugin.json`
+
 搜索字符串：`"endtime": -1`全部替换为`"endtime": 999999999999`
 
 #### 5，给plugin.json文件上锁防止自动修复为免费版
