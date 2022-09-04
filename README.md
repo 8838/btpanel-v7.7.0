@@ -32,7 +32,8 @@ chattr +i /www/server/panel/data/plugin.json
 
 6，上锁后现在可以关闭离线模式了
 
-### 如需取消屏蔽手机号
+===========================================================
+##如需取消屏蔽手机号
 ```
 sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/server/panel/BTPanel/static/js/index.js
 ```
