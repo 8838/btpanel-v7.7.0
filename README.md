@@ -30,8 +30,6 @@ rm -f /www/server/panel/data/bind.pl
 文件路径：www/server/panel/data/plugin.json
 搜索字符串：`"endtime": -1`全部替换为`"endtime": 999999999999`
 
-需要替换184个文件，或者下载仓库里已修改好的plugin.json文件直接替换
-
 5，给plugin.json文件上锁防止自动修复为免费版
 ```
 chattr +i /www/server/panel/data/plugin.json
