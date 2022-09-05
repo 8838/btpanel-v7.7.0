@@ -33,7 +33,7 @@ rm -f /www/server/panel/data/bind.pl
 chattr +i /www/server/panel/data/plugin.json
 ```
 
-### 完成！
+完成！
 ============================
 
 ！！如需取消屏蔽手机号
