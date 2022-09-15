@@ -1,4 +1,4 @@
-# 宝塔面板-v7.7.0
+# btpanel-v7.7.0
 btpanel-v7.7.0-backup  官方原版v7.7.0版本面板备份
 
 **Centos/Ubuntu/Debian安装命令 独立运行环境（py3.7）**
@@ -15,7 +15,7 @@ curl -sSO https://raw.githubusercontent.com/8838/btpanel-v7.7.0/main/install/ins
 sed -i "s|bind_user == 'True'|bind_user == 'XXXX'|" /www/server/panel/BTPanel/static/js/index.js
 ```
 
-2，删除宝塔强制绑定手机js文件
+2，删除强制绑定手机js文件
 
 ```
 rm -f /www/server/panel/data/bind.pl
