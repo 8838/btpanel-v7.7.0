@@ -47,6 +47,7 @@ sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/serve
 解决办法，编辑`/www/server/panel/task.py`这个文件
 
 ```
+......
  def siteEdate():
      global oldEdate
      try:
@@ -55,6 +56,7 @@ sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/serve
          if not oldEdate:
              oldEdate = '0000-00-00'
          mEdate = time.strftime('%Y-%m-%d', time.localtime())
+......
 ```
 
 保存，然后重启Nginx
