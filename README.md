@@ -51,8 +51,7 @@ sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/serve
      global oldEdate
      try:
         if not oldEdate:       //删除这行
-            oldEdate = ReadFile('/www/server/panel/data/edate.pl')     //删除这行
-        oldEdate = ReadFile('/www/server/panel/data/edate.pl')      //添加这行
+            oldEdate = ReadFile('/www/server/panel/data/edate.pl')
          if not oldEdate:
              oldEdate = '0000-00-00'
          mEdate = time.strftime('%Y-%m-%d', time.localtime())
