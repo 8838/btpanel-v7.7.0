@@ -39,3 +39,23 @@ chattr +i /www/server/panel/data/plugin.json
 ```
 sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/server/panel/BTPanel/static/js/index.js
 ```
+
+# BUG修复
+
+这个版本有一个官方bug，每日0点CPU高占用：https://hostloc.com/thread-1030797-1-1.html
+
+解决办法，编辑`/www/server/panel/task.py`这个文件
+
+```
+ def siteEdate():
+     global oldEdate
+     try:
+        if not oldEdate:       //删除这行
+            oldEdate = ReadFile('/www/server/panel/data/edate.pl')     //删除这行
+        oldEdate = ReadFile('/www/server/panel/data/edate.pl')      //添加这行
+         if not oldEdate:
+             oldEdate = '0000-00-00'
+         mEdate = time.strftime('%Y-%m-%d', time.localtime())
+```
+
+保存，然后重启Nginx
