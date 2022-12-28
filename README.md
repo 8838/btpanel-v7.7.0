@@ -39,9 +39,18 @@ rm -f /www/server/panel/data/bind.pl
 chattr +i /www/server/panel/data/plugin.json
 ```
 
+5，基础安全加固
+
+* 面板左侧：安全，修改SSH登陆端口，SSH管理，关闭密码登录SSH，开启秘钥登录
+* 面板左侧：设置，修改宝塔默认端口，修改宝塔默认用户名与密码
+
+！！因为宝塔默认用户名+密码都是8位随机英语与数字。很容易被爆破机器人找到规律。**务必修改**
+
+
 ============================
 
 ！！如需取消屏蔽手机号
+
 ```
 sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/server/panel/BTPanel/static/js/index.js
 ```
