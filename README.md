@@ -53,7 +53,7 @@ sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/serve
 
 文件路径：`/www/server/panel/task.py`
 
-搜索`0000-00-00`
+搜索`0000-00-00`定位
 
 ```
 def siteEdate():
