@@ -73,7 +73,7 @@ def siteEdate():
         pass
 ```
 
-替换为：
+整个替换为：
 
 ```
 def siteEdate():
