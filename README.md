@@ -46,3 +46,46 @@ chattr +i /www/server/panel/data/plugin.json
 ```
 sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/server/panel/BTPanel/static/js/index.js
 ```
+
+# BUG修复
+
+该版本有一个0点CPU高占用BUG：https://www.bt.cn/bbs/thread-93986-1-1.html
+
+文件路径：`/www/server/panel/task.py`
+
+搜索`0000-00-00`
+
+```
+def siteEdate():
+    global oldEdate
+    try:
+        if not oldEdate:
+            oldEdate = ReadFile('/www/server/panel/data/edate.pl')
+        if not oldEdate:
+            oldEdate = '0000-00-00'
+        mEdate = time.strftime('%Y-%m-%d', time.localtime())
+        if oldEdate == mEdate:
+            return False
+        os.system(get_python_bin() +
+                  " /www/server/panel/script/site_task.py > /dev/null")
+    except Exception as ex:
+        logging.info(ex)
+        pass
+```
+
+替换为：
+
+```
+def siteEdate():
+    global oldEdate
+    try:
+        if not oldEdate: oldEdate = ReadFile('{}/data/edate.pl'.format(base_path))
+        if not oldEdate: oldEdate = '0000-00-00'
+        mEdate = time.strftime('%Y-%m-%d', time.localtime())
+        if oldEdate == mEdate: return False
+        os.system(get_python_bin() + " {}/script/site_task.py > /dev/null".format(base_path))
+    except Exception as ex:
+        logging.info(ex)
+        pass
+```
+最后重启一下面板
