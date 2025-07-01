@@ -13,8 +13,6 @@ curl -sSO https://raw.githubusercontent.com/8838/btpanel-v7.7.0/main/install/ins
 curl -sSO https://d.moe.ms/AAAAA/btpanel-v7.7.0/install/install_panel.sh && bash install_panel.sh
 ```
 
-============================
-
 # 手动解锁插件：
 
 1，屏蔽手机号
@@ -48,6 +46,8 @@ chattr +i /www/server/panel/data/plugin.json
 ```
 sed -i "s|if (bind_user == 'REMOVED') {|if (bind_user == 'True') {|g" /www/server/panel/BTPanel/static/js/index.js
 ```
+
+============================
 
 ## Sponsored: EdgeOne
 
